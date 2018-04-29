@@ -6,3 +6,60 @@
 
 a = [1, 2, 3, 9, 12, 31, 'domingo']
 b = %w[lunes martes miércoles jueves viernes sábado domingo]
+
+ print  "1-concatenación de a y b es: #{a+b} "
+ puts "\n"
+ puts "\n"
+
+
+# a.include?("domingo")
+# a.include?("martes")
+
+union=[]
+a.each do |e|
+	if !b.include?(e)
+		union<< e
+	end
+end
+b.each do |e|
+	if !a.include?(e)
+		union<<e
+
+	end
+end
+
+print  "2-La union a y b es: "
+print union.uniq
+puts "\n"
+puts "\n"
+
+inter=[]
+a.each do |e|
+	if b.include?(e)
+		inter<< e
+	end
+end
+b.each do |e|
+	if a.include?(e)
+		inter<<e
+
+	end
+end
+
+print  "3-La intersección a y b es: "
+print inter.uniq
+puts "\n"
+
+def intercala(a,b)
+  nvo= []
+  for i in 0..(a.length-1)
+    nvo.push(a[i])
+    nvo.push(b[i])
+  end
+	puts nvo
+end
+
+
+print  "4-intercalados: "
+puts "\n"
+intercala(a, b)
